@@ -10,7 +10,7 @@
  
 PROJECT(hello_prog)
 
-INCLUDE_DIRECTORIES(${exploration_SOURCE_DIR}/thirdparty/glad/include/)
+INCLUDE_DIRECTORIES(${exploration_SOURCE_DIR}/thirdparty/glad/include/ ${exploration_SOURCE_DIR}/include)
 LINK_DIRECTORIES(${exploration_SOURCE_DIR}/thirdparty/glad/src/)
 
 ADD_EXECUTABLE(prog main.cxx)
