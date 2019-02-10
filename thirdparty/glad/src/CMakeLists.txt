@@ -1,2 +1,2 @@
-INCLUDE_DIRECTORIES(${exploration_SOURCE_DIR}/thirdparty/glad/include)
-ADD_LIBRARY(glad_lib glad.c)
+ADD_LIBRARY(glad STATIC glad.c)
+TARGET_INCLUDE_DIRECTORIES(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include)

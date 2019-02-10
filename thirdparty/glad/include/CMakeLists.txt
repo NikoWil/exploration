@@ -1,3 +1,0 @@
-PROJECT(glad) 
-
-ADD_LIBRARY(glad INTERFACE)
