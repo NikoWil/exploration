@@ -1,0 +1,1 @@
+ADD_SUBDIRECTORY(assimp-4.1.0) 
