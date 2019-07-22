@@ -1,2 +1,2 @@
-ADD_LIBRARY(stb_image stb_image.cxx)
+ADD_LIBRARY(stb_image STATIC stb_image.cxx)
 TARGET_INCLUDE_DIRECTORIES(stb_image PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include)

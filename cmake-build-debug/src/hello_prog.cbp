@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hello_prog"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\thirdparty\;CMake Files\thirdparty\assimp\;CMake Files\thirdparty\assimp\assimp-4.1.0\;CMake Files\thirdparty\assimp\assimp-4.1.0\include\;CMake Files\thirdparty\assimp\assimp-4.1.0\include\assimp\;CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\irrXML\;CMake Files\thirdparty\assimp\assimp-4.1.0\code\;CMake Files\thirdparty\assimp\assimp-4.1.0\tools\;CMake Files\thirdparty\assimp\assimp-4.1.0\tools\assimp_cmd\;CMake Files\thirdparty\assimp\assimp-4.1.0\test\;CMake Files\thirdparty\assimp\assimp-4.1.0\test\headercheck\;CMake Files\thirdparty\glfw\;CMake Files\thirdparty\glfw\glfw-3.2.1\;CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\;CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\modules\;CMake Files\thirdparty\glfw\glfw-3.2.1\src\;CMake Files\thirdparty\glad\;CMake Files\thirdparty\glad\src\;CMake Files\thirdparty\glm\;CMake Files\thirdparty\glm\cmake\;CMake Files\thirdparty\glm\glm\;CMake Files\thirdparty\glm\test\;CMake Files\thirdparty\glm\test\bug\;CMake Files\thirdparty\glm\test\core\;CMake Files\thirdparty\glm\test\ext\;CMake Files\thirdparty\glm\test\gtc\;CMake Files\thirdparty\glm\test\gtx\;CMake Files\thirdparty\glm\test\perf\;CMake Files\thirdparty\stb_image\;CMake Files\thirdparty\stb_image\src\;CMake Files\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="prog">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/bin/prog.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="D:/dev/projects/exploration/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glad/src/../include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glm"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/stb_image/src/../include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 prog"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="prog/fast">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/bin/prog.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DGLFW_DLL"/>
+					<Add directory="D:/dev/projects/exploration/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glad/src/../include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/glm"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/stb_image/src/../include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 prog/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/dev/projects/exploration/src/camera.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/main.cxx">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/mesh.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/model.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/plane.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/shader.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/simplemesh.hpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/triangleSoup.cpp">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/triangleSoup.h">
+			<Option target="prog"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp-config.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/revision.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\include\assimp\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindDevIL.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindDirectX.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zconf.h.cmakein">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlib.pc.cmakein">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/irrXML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\irrXML\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\code\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/tools/assimp_cmd/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\tools\assimp_cmd\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\test\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/test/headercheck/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\test\headercheck\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/CMake/modules/FindVulkan.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glad\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glad/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glad\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glm.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glmBuildConfig.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glmConfig.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\glm\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/bug/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\bug\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\core\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/ext/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\ext\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/gtc/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\gtc\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/gtx/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\gtx\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/perf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\perf\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/stb_image/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\stb_image\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/stb_image/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\stb_image\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

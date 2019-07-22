@@ -1332,7 +1332,7 @@ LockedChannels 4089
 ParentItem 1000000e
 ShadowOptions 0
 
-AddNullObject Quick Draw == HANDLE == Arm
+AddNullObject Quick draw == HANDLE == Arm
 ShowObject 5 7
 ObjectMotion
 NumChannels 9
