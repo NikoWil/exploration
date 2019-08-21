@@ -1,6 +1,7 @@
 # special own files
 build.sh
 build/
+cmake-build-debug/
 
 # Created by https://www.gitignore.io/api/c++,cmake,visualstudio
 # Edit at https://www.gitignore.io/?templates=c++,cmake,visualstudio
