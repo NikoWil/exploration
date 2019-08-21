@@ -1,10 +1,10 @@
 PROJECT(hello_prog)
 
-ADD_EXECUTABLE(prog main.cxx camera.hpp shader.hpp mesh.hpp model.hpp)
+ADD_EXECUTABLE(prog main.cxx camera.hpp shader.hpp mesh.hpp model.hpp plane.hpp simplemesh.hpp triangleSoup.cpp triangleSoup.h)
 
 TARGET_INCLUDE_DIRECTORIES(prog PRIVATE 
   ${exploration_SOURCE_DIR}/include
-  ${exploration_SOURCE_DIR}/src
+  #${exploration_SOURCE_DIR}/src
 )
 
 TARGET_LINK_LIBRARIES(prog PRIVATE assimp glad glfw glm stb_image)

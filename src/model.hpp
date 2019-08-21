@@ -10,8 +10,8 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include <mesh.hpp>
-#include <shader.hpp>
+#include "mesh.hpp"
+#include "shader.hpp"
 
 #include <string>
 #include <fstream>
@@ -22,7 +22,7 @@
 
 using namespace std;
 
-unsigned int TextureFromFile(const char *path, const string &directory, bool gamma = false);
+unsigned int textureFromFile(const char *path, const string &directory, bool gamma = false);
 
 class Model 
 {
@@ -41,10 +41,10 @@ public:
     }
 
     // draws the model, and thus all its meshes
-    void Draw(Shader shader)
+    void draw(Shader shader)
     {
         for(unsigned int i = 0; i < meshes.size(); i++)
-            meshes[i].Draw(shader);
+            meshes[i].draw(shader);
     }
     
 private:
@@ -190,7 +190,7 @@ private:
             if(!skip)
             {   // if texture hasn't been loaded already, load it
                 Texture texture;
-                texture.id = TextureFromFile(str.C_Str(), this->directory);
+                texture.id = textureFromFile(str.C_Str(), this->directory);
                 texture.type = typeName;
                 texture.path = str.C_Str();
                 textures.push_back(texture);
@@ -202,7 +202,7 @@ private:
 };
 
 
-unsigned int TextureFromFile(const char *path, const string &directory, bool gamma)
+unsigned int textureFromFile(const char *path, const string &directory, bool gamma)
 {
     string filename = string(path);
     filename = directory + '/' + filename;

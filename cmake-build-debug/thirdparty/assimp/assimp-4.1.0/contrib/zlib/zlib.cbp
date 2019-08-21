@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="zlib"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\thirdparty\;CMake Files\thirdparty\assimp\;CMake Files\thirdparty\assimp\assimp-4.1.0\;CMake Files\thirdparty\assimp\assimp-4.1.0\include\;CMake Files\thirdparty\assimp\assimp-4.1.0\include\assimp\;CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\;CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\irrXML\;CMake Files\thirdparty\assimp\assimp-4.1.0\code\;CMake Files\thirdparty\assimp\assimp-4.1.0\tools\;CMake Files\thirdparty\assimp\assimp-4.1.0\tools\assimp_cmd\;CMake Files\thirdparty\assimp\assimp-4.1.0\test\;CMake Files\thirdparty\assimp\assimp-4.1.0\test\headercheck\;CMake Files\thirdparty\glfw\;CMake Files\thirdparty\glfw\glfw-3.2.1\;CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\;CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\modules\;CMake Files\thirdparty\glfw\glfw-3.2.1\src\;CMake Files\thirdparty\glad\;CMake Files\thirdparty\glad\src\;CMake Files\thirdparty\glm\;CMake Files\thirdparty\glm\cmake\;CMake Files\thirdparty\glm\glm\;CMake Files\thirdparty\glm\test\;CMake Files\thirdparty\glm\test\bug\;CMake Files\thirdparty\glm\test\core\;CMake Files\thirdparty\glm\test\ext\;CMake Files\thirdparty\glm\test\gtc\;CMake Files\thirdparty\glm\test\gtx\;CMake Files\thirdparty\glm\test\perf\;CMake Files\thirdparty\stb_image\;CMake Files\thirdparty\stb_image\src\;CMake Files\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zlib">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlibd.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DWIN32_LEAN_AND_MEAN"/>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DNO_FSEEKO"/>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE"/>
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/."/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 zlib"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zlib/fast">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlibd.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DWIN32_LEAN_AND_MEAN"/>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DNO_FSEEKO"/>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE"/>
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/."/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 zlib/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zlibstatic">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlibstaticd.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DWIN32_LEAN_AND_MEAN"/>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DNO_FSEEKO"/>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE"/>
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/."/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 zlibstatic"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zlibstatic/fast">
+				<Option output="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlibstaticd.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DWIN32_LEAN_AND_MEAN"/>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DNO_FSEEKO"/>
+					<Add option="-D_CRT_SECURE_NO_DEPRECATE"/>
+					<Add option="-D_CRT_NONSTDC_NO_DEPRECATE"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/."/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/include"/>
+					<Add directory="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib"/>
+					<Add directory="D:/dev/projects/exploration"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 zlibstatic/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\dev\projects\exploration\cmake-build-debug\thirdparty\assimp\assimp-4.1.0\contrib\zlib\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/dev/projects/exploration/cmake-build-debug/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zconf.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/adler32.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/compress.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/crc32.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/crc32.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/deflate.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/deflate.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/gzclose.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/gzguts.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/gzlib.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/gzread.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/gzwrite.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/infback.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inffast.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inffast.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inffixed.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inflate.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inflate.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inftrees.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/inftrees.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/trees.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/trees.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/uncompr.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/win32/zlib1.rc">
+			<Option target="zlib"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlib.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zutil.c">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zutil.h">
+			<Option target="zlib"/>
+			<Option target="zlibstatic"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp-config.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/assimp.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/revision.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\include\assimp\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindDevIL.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindDirectX.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/cmake-modules/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\cmake-modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zconf.h.cmakein">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/zlib/zlib.pc.cmakein">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\zlib\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/contrib/irrXML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\contrib\irrXML\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\code\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/tools/assimp_cmd/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\tools\assimp_cmd\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\test\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/assimp/assimp-4.1.0/test/headercheck/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\assimp\assimp-4.1.0\test\headercheck\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/CMake/modules/FindVulkan.cmake">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\CMake\modules\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glfw/glfw-3.2.1/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\thirdparty\glfw\glfw-3.2.1\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glad\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glad/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glad\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glm.pc.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glmBuildConfig.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/cmake/glmConfig.cmake.in">
+			<Option virtualFolder="CMake Files\thirdparty\glm\cmake\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/glm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\glm\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/bug/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\bug\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\core\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/ext/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\ext\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/gtc/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\gtc\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/gtx/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\gtx\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/glm/test/perf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\glm\test\perf\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/stb_image/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\stb_image\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/thirdparty/stb_image/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\thirdparty\stb_image\src\"/>
+		</Unit>
+		<Unit filename="D:/dev/projects/exploration/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
