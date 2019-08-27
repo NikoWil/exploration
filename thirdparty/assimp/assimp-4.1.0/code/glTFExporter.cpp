@@ -563,7 +563,7 @@ void glTFExporter::ExportMeshes()
 			std::string msg;
 
 			if(aim->mPrimitiveTypes != aiPrimitiveType_TRIANGLE)
-				msg = "all primitives of the mesh must be a triangles.";
+				msg = "all primitives of the mesh must be a indices.";
 			else
 				msg = "mesh must has vertices and faces.";
 

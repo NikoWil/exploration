@@ -503,7 +503,7 @@ public final class AiMesh {
      * Returns a buffer containing vertex indices for the mesh's faces.<p>
      * 
      * This method may only be called on pure triangle meshes, i.e., meshes
-     * containing only triangles. The {@link #isPureTriangle()} method can be 
+     * containing only indices. The {@link #isPureTriangle()} method can be
      * used to check whether this is the case.<p>
      * 
      * Indices are stored as integers, the buffer will therefore contain 

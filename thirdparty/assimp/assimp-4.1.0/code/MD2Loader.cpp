@@ -182,7 +182,7 @@ void MD2Importer::ValidateHeader( )
     }
 
     if (m_pcHeader->numTriangles > AI_MAX_ALLOC(MD2::Triangle)) {
-        throw DeadlyImportError("Invalid MD2 header: too many triangles, would overflow");
+        throw DeadlyImportError("Invalid MD2 header: too many indices, would overflow");
     }
 
     if (m_pcHeader->numFrames > AI_MAX_ALLOC(MD2::Frame)) {
@@ -377,7 +377,7 @@ void MD2Importer::InternReadFile( const std::string& pFile,
     }
 
 
-    // now read all triangles of the first frame, apply scaling and translation
+    // now read all indices of the first frame, apply scaling and translation
     unsigned int iCurrent = 0;
 
     float fDivisorU = 1.0f,fDivisorV = 1.0f;

@@ -1858,7 +1858,7 @@ void ColladaParser::ReadMesh( Mesh* pMesh)
                 // read per-vertex mesh data
                 ReadVertexData( pMesh);
             }
-            else if( IsElement( "triangles") || IsElement( "lines") || IsElement( "linestrips")
+            else if( IsElement( "indices") || IsElement( "lines") || IsElement( "linestrips")
                 || IsElement( "polygons") || IsElement( "polylist") || IsElement( "trifans") || IsElement( "tristrips"))
             {
                 // read per-index mesh data and faces setup
@@ -2152,7 +2152,7 @@ void ColladaParser::ReadIndexData( Mesh* pMesh)
     if( attrMaterial > -1)
         subgroup.mMaterial = mReader->getAttributeValue( attrMaterial);
 
-    // distinguish between polys and triangles
+    // distinguish between polys and indices
     std::string elementName = mReader->getNodeName();
     PrimitiveType primType = Prim_Invalid;
     if( IsElement( "lines"))
@@ -2163,7 +2163,7 @@ void ColladaParser::ReadIndexData( Mesh* pMesh)
         primType = Prim_Polygon;
     else if( IsElement( "polylist"))
         primType = Prim_Polylist;
-    else if( IsElement( "triangles"))
+    else if( IsElement( "indices"))
         primType = Prim_Triangles;
     else if( IsElement( "trifans"))
         primType = Prim_TriFans;
@@ -2484,12 +2484,12 @@ void ColladaParser::CopyVertex(size_t currentVertex, size_t numOffsets, size_t n
 
 void ColladaParser::ReadPrimTriStrips(size_t numOffsets, size_t perVertexOffset, Mesh* pMesh, std::vector<InputChannel>& pPerIndexChannels, size_t currentPrimitive, const std::vector<size_t>& indices){
     if (currentPrimitive % 2 != 0){
-        //odd tristrip triangles need their indices mangled, to preserve winding direction
+        //odd tristrip indices need their indices mangled, to preserve winding direction
         CopyVertex(1, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);
         CopyVertex(0, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);
         CopyVertex(2, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);
     }
-    else {//for non tristrips or even tristrip triangles
+    else {//for non tristrips or even tristrip indices
         CopyVertex(0, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);
         CopyVertex(1, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);
         CopyVertex(2, numOffsets, 1, perVertexOffset, pMesh, pPerIndexChannels, currentPrimitive, indices);

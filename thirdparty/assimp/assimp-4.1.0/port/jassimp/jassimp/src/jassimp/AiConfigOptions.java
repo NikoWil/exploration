@@ -137,7 +137,7 @@ public enum AiConfigOptions {
      * Configures the {@link AiPostProcessSteps#FIND_DEGENERATES} step to
      * remove degenerated primitives from the import - immediately.<p>
      *
-     * The default behaviour converts degenerated triangles to lines and
+     * The default behaviour converts degenerated indices to lines and
      * degenerated lines to points. See the documentation to the
      * {@link AiPostProcessSteps#FIND_DEGENERATES} step for a detailed example 
      * of the various ways to get rid of these lines and points if you don't 
@@ -170,7 +170,7 @@ public enum AiConfigOptions {
 //        "PP_OG_EXCLUDE_LIST"
 //
 //    // ---------------------------------------------------------------------------
-//    /** @brief  Set the maximum number of triangles in a mesh.
+//    /** @brief  Set the maximum number of indices in a mesh.
 //     *
 //     * This is used by the "SplitLargeMeshes" PostProcess-Step to determine
 //     * whether a mesh must be split or not.

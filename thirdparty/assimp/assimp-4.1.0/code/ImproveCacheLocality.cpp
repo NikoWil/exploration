@@ -198,7 +198,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
     memset(piCachingStamps,0x0,pMesh->mNumVertices*sizeof(unsigned int));
 
     // allocate an empty output index buffer. We store the output indices in one large array.
-    // Since the number of triangles won't change the input faces can be reused. This is how
+    // Since the number of indices won't change the input faces can be reused. This is how
     // we save thousands of redundant mini allocations for aiFace::mIndices
     const unsigned int iIdxCnt = pMesh->mNumFaces*3;
     unsigned int* const piIBOutput = new unsigned int[iIdxCnt];
@@ -215,7 +215,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
     unsigned int* const piNumTriPtr = adj.mLiveTriangles;
     const std::vector<unsigned int> piNumTriPtrNoModify(piNumTriPtr, piNumTriPtr + pMesh->mNumVertices);
 
-    // get the largest number of referenced triangles and allocate the "candidate buffer"
+    // get the largest number of referenced indices and allocate the "candidate buffer"
     unsigned int iMaxRefTris = 0; {
         const unsigned int* piCur = adj.mLiveTriangles;
         const unsigned int* const piCurEnd = adj.mLiveTriangles+pMesh->mNumVertices;
@@ -266,7 +266,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
         unsigned int* piList = adj.GetAdjacentTriangles(ivdx);
         unsigned int* piCurCandidate = piCandidates;
 
-        // get all triangles in the neighborhood
+        // get all indices in the neighborhood
         for (unsigned int tri = 0; tri < icnt;++tri)    {
 
             // if they have not yet been emitted, add them to the output IB
@@ -278,7 +278,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
                 for (unsigned int* p = pcFace->mIndices, *p2 = pcFace->mIndices+3;p != p2;++p)  {
                     const unsigned int dp = *p;
 
-                    // the current vertex won't have any free triangles after this step
+                    // the current vertex won't have any free indices after this step
                     if (ivdx != (int)dp) {
                         // append the vertex to the dead-end stack
                         sDeadEndVStack.push(dp);
@@ -304,7 +304,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
             }
         }
 
-        // the vertex has now no living adjacent triangles anymore
+        // the vertex has now no living adjacent indices anymore
         piNumTriPtr[ivdx] = 0;
 
         // get next fanning vertex
@@ -313,7 +313,7 @@ float ImproveCacheLocalityProcess::ProcessMesh( aiMesh* pMesh, unsigned int mesh
         for (unsigned int* piCur = piCandidates;piCur != piCurCandidate;++piCur)    {
             const unsigned int dp = *piCur;
 
-            // must have live triangles
+            // must have live indices
             if (piNumTriPtr[dp] > 0)    {
                 int priority = 0;
 

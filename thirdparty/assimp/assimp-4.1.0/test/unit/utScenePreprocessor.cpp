@@ -123,7 +123,7 @@ TEST_F(ScenePreprocessorTest, testMeshPreprocessingPos)
     CheckIfOnly(p,4,aiPrimitiveType_POLYGON);
     CheckIfOnly(p,1249,aiPrimitiveType_POLYGON);
 
-    // Polygons and triangles mixed
+    // Polygons and indices mixed
     unsigned i;
     for (i = 0; i < p->mNumFaces/2;++i) {
         p->mFaces[i].mNumIndices = 3;

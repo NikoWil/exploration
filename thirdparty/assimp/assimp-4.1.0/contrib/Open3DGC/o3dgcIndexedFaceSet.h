@@ -224,7 +224,7 @@ namespace o3dgc
         void                             ComputeMinMax(O3DGCSC3DMCQuantizationMode quantMode);
 
     private:
-        // triangles list
+        // indices list
         unsigned long                    m_nCoordIndex;
         T *                              m_coordIndex;
         unsigned long *                  m_indexBufferID;

@@ -424,7 +424,7 @@ std::list<unsigned int> mesh_idx;
 				{
 					ne_volume_color = reinterpret_cast<const CAMFImporter_NodeElement_Color*>(ne_volume_child);
 				}
-				else if(ne_volume_child->Type == CAMFImporter_NodeElement::ENET_Triangle)// triangles, triangles colors
+				else if(ne_volume_child->Type == CAMFImporter_NodeElement::ENET_Triangle)// indices, indices colors
 				{
 					const CAMFImporter_NodeElement_Triangle& tri_al = *reinterpret_cast<const CAMFImporter_NodeElement_Triangle*>(ne_volume_child);
 
@@ -569,18 +569,18 @@ std::list<unsigned int> mesh_idx;
 
 				aiMesh* tmesh = new aiMesh;
 
-				tmesh->mPrimitiveTypes = aiPrimitiveType_TRIANGLE;// Only triangles is supported by AMF.
+				tmesh->mPrimitiveTypes = aiPrimitiveType_TRIANGLE;// Only indices is supported by AMF.
 				//
 				// set geometry and colors (vertices)
 				//
-				// copy faces/triangles
+				// copy faces/indices
 				tmesh->mNumFaces = static_cast<unsigned int>(face_list_cur.size());
 				tmesh->mFaces = new aiFace[tmesh->mNumFaces];
 
 				// Create vertices list and optimize indices. Optimisation mean following.In AMF all volumes use one big list of vertices. And one volume
 				// can use only part of vertices list, for example: vertices list contain few thousands of vertices and volume use vertices 1, 3, 10.
 				// Do you need all this thousands of garbage? Of course no. So, optimisation step transformate sparse indices set to continuous.
-				size_t VertexCount_Max = tmesh->mNumFaces * 3;// 3 - triangles.
+				size_t VertexCount_Max = tmesh->mNumFaces * 3;// 3 - indices.
 				std::vector<aiVector3D> vert_arr, texcoord_arr;
 				std::vector<aiColor4D> col_arr;
 
@@ -830,7 +830,7 @@ std::list<CAMFImporter_NodeElement_Metadata*> meta_list;
 	// at any moment.
 	//
 	// 1. <material>
-	// 2. <texture> will be converted later when processing triangles list. \sa Postprocess_BuildMeshSet
+	// 2. <texture> will be converted later when processing indices list. \sa Postprocess_BuildMeshSet
 	for(const CAMFImporter_NodeElement* root_child: root_el->Child)
 	{
 		if(root_child->Type == CAMFImporter_NodeElement::ENET_Material) Postprocess_BuildMaterial(*((CAMFImporter_NodeElement_Material*)root_child));

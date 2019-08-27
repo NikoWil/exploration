@@ -291,7 +291,7 @@ void RAWImporter::InternReadFile( const std::string& pFile,
                 ::memcpy(mesh->mColors[0],&(*it2).colors[0],sizeof(aiColor4D)*mesh->mNumVertices);
             }
 
-            // generate triangles
+            // generate indices
             ai_assert(0 == mesh->mNumVertices % 3);
             aiFace* fc = mesh->mFaces = new aiFace[ mesh->mNumFaces = mesh->mNumVertices/3 ];
             aiFace* const fcEnd = fc + mesh->mNumFaces;

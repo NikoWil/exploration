@@ -291,7 +291,7 @@ void MDLImporter::ValidateHeader_Quake1(const MDL::Header* pcHeader)
         throw DeadlyImportError( "[Quake 1 MDL] There are no vertices in the file");
 
     if (!pcHeader->num_tris)
-        throw DeadlyImportError( "[Quake 1 MDL] There are no triangles in the file");
+        throw DeadlyImportError( "[Quake 1 MDL] There are no indices in the file");
 
     // check whether the maxima are exceeded ...however, this applies for Quake 1 MDLs only
     if (!this->iGSFileVersion)
@@ -300,7 +300,7 @@ void MDLImporter::ValidateHeader_Quake1(const MDL::Header* pcHeader)
             DefaultLogger::get()->warn("Quake 1 MDL model has more than AI_MDL_MAX_VERTS vertices");
 
         if (pcHeader->num_tris > AI_MDL_MAX_TRIANGLES)
-            DefaultLogger::get()->warn("Quake 1 MDL model has more than AI_MDL_MAX_TRIANGLES triangles");
+            DefaultLogger::get()->warn("Quake 1 MDL model has more than AI_MDL_MAX_TRIANGLES indices");
 
         if (pcHeader->num_frames > AI_MDL_MAX_FRAMES)
             DefaultLogger::get()->warn("Quake 1 MDL model has more than AI_MDL_MAX_FRAMES frames");
@@ -398,7 +398,7 @@ void MDLImporter::InternReadFile_Quake1( )
     BE_NCONST MDL::TexCoord* pcTexCoords = (BE_NCONST MDL::TexCoord*)szCurrent;
     szCurrent += sizeof(MDL::TexCoord) * pcHeader->num_verts;
 
-    // get a pointer to the triangles
+    // get a pointer to the indices
     BE_NCONST MDL::Triangle* pcTriangles = (BE_NCONST MDL::Triangle*)szCurrent;
     szCurrent += sizeof(MDL::Triangle) * pcHeader->num_tris;
     VALIDATE_FILE_SIZE(szCurrent);
@@ -441,7 +441,7 @@ void MDLImporter::InternReadFile_Quake1( )
     // setup materials
     SetupMaterialProperties_3DGS_MDL5_Quake1();
 
-    // allocate enough storage to hold all vertices and triangles
+    // allocate enough storage to hold all vertices and indices
     aiMesh* pcMesh = new aiMesh();
 
     pcMesh->mPrimitiveTypes = aiPrimitiveType_TRIANGLE;
@@ -462,7 +462,7 @@ void MDLImporter::InternReadFile_Quake1( )
     pScene->mMeshes = new aiMesh*[1];
     pScene->mMeshes[0] = pcMesh;
 
-    // now iterate through all triangles
+    // now iterate through all indices
     unsigned int iCurrent = 0;
     for (unsigned int i = 0; i < (unsigned int) pcHeader->num_tris;++i)
     {
@@ -610,7 +610,7 @@ void MDLImporter::InternReadFile_3DGS_MDL345( )
 
     // NOTE: for MDLn formats "synctype" corresponds to the number of UV coords
 
-    // get a pointer to the triangles
+    // get a pointer to the indices
     BE_NCONST MDL::Triangle_MDL3* pcTriangles = (BE_NCONST MDL::Triangle_MDL3*)szCurrent;
     szCurrent += sizeof(MDL::Triangle_MDL3) * pcHeader->num_tris;
 
@@ -637,7 +637,7 @@ void MDLImporter::InternReadFile_3DGS_MDL345( )
     // setup materials
     SetupMaterialProperties_3DGS_MDL5_Quake1();
 
-    // allocate enough storage to hold all vertices and triangles
+    // allocate enough storage to hold all vertices and indices
     aiMesh* pcMesh = new aiMesh();
     pcMesh->mPrimitiveTypes = aiPrimitiveType_TRIANGLE;
 
@@ -678,7 +678,7 @@ void MDLImporter::InternReadFile_3DGS_MDL345( )
 
         VALIDATE_FILE_SIZE(pcVertices + pcHeader->num_verts);
 
-        // now iterate through all triangles
+        // now iterate through all indices
         unsigned int iCurrent = 0;
         for (unsigned int i = 0; i < (unsigned int) pcHeader->num_tris;++i) {
             pcMesh->mFaces[i].mIndices = new unsigned int[3];
@@ -733,7 +733,7 @@ void MDLImporter::InternReadFile_3DGS_MDL345( )
 
         VALIDATE_FILE_SIZE(pcVertices + pcHeader->num_verts);
 
-        // now iterate through all triangles
+        // now iterate through all indices
         unsigned int iCurrent = 0;
         for (unsigned int i = 0; i < (unsigned int) pcHeader->num_tris;++i) {
             pcMesh->mFaces[i].mIndices = new unsigned int[3];
@@ -1009,7 +1009,7 @@ void MDLImporter::ReadFaces_3DGS_MDL7(const MDL::IntGroupInfo_MDL7& groupInfo,
     const MDL::Header_MDL7 *pcHeader = (const MDL::Header_MDL7*)this->mBuffer;
     MDL::Triangle_MDL7* pcGroupTris = groupInfo.pcGroupTris;
 
-    // iterate through all triangles and build valid display lists
+    // iterate through all indices and build valid display lists
     unsigned int iOutIndex = 0;
     for (unsigned int iTriangle = 0; iTriangle < (unsigned int)groupInfo.pcGroup->numtris; ++iTriangle) {
         AI_SWAP2(pcGroupTris->v_index[0]);

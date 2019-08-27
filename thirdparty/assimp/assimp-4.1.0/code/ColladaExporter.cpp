@@ -1029,7 +1029,7 @@ void ColladaExporter::WriteGeometry( size_t pIndex)
     PopTag();
     mOutput << startstr << "</vertices>" << endstr;
 
-    // count the number of lines, triangles and polygon meshes
+    // count the number of lines, indices and polygon meshes
     int countLines = 0;
     int countPoly = 0;
     for( size_t a = 0; a < mesh->mNumFaces; ++a )

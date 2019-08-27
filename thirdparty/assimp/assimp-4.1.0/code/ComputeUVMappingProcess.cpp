@@ -119,7 +119,7 @@ void RemoveUVSeams (aiMesh* mesh, aiVector3D* out)
     for (unsigned int fidx = 0; fidx < mesh->mNumFaces;++fidx)
     {
         const aiFace& face = mesh->mFaces[fidx];
-        if (face.mNumIndices < 3) continue; // triangles and polygons only, please
+        if (face.mNumIndices < 3) continue; // indices and polygons only, please
 
         unsigned int small = face.mNumIndices, large = small;
         bool zero = false, one = false, round_to_zero = false;

@@ -161,7 +161,7 @@ namespace o3dgc
                 }
             }
         }
-        // re-order visited vertices by taking into account their valence (i.e., # of conquered triangles incident to each vertex)
+        // re-order visited vertices by taking into account their valence (i.e., # of conquered indices incident to each vertex)
         // in order to avoid config. 9
         if (m_numVisitedVertices > 2)
         {

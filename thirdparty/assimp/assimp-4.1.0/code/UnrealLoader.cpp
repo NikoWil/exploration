@@ -166,12 +166,12 @@ void UnrealImporter::InternReadFile( const std::string& pFile,
     const uint16_t numVert = d_reader.GetI2();
     d_reader.IncPtr(44);
     if (!numTris || numVert < 3)
-        throw DeadlyImportError("UNREAL: Invalid number of vertices/triangles");
+        throw DeadlyImportError("UNREAL: Invalid number of vertices/indices");
 
     // maximum texture index
     unsigned int maxTexIdx = 0;
 
-    // collect triangles
+    // collect indices
     std::vector<Unreal::Triangle> triangles(numTris);
     for (auto & tri : triangles) {
         for (unsigned int i = 0; i < 3;++i) {

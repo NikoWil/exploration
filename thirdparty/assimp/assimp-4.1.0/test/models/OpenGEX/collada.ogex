@@ -143,7 +143,7 @@ CameraNode $node8
 
 GeometryObject $geometry1		// Collada
 {
-	Mesh (primitive = "triangles")
+	Mesh (primitive = "indices")
 	{
 		VertexArray (attrib = "position")
 		{
@@ -1432,7 +1432,7 @@ GeometryObject $geometry1		// Collada
 
 GeometryObject $geometry2		// Floor
 {
-	Mesh (primitive = "triangles")
+	Mesh (primitive = "indices")
 	{
 		VertexArray (attrib = "position")
 		{

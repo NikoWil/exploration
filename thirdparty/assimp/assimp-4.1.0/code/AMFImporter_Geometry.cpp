@@ -96,7 +96,7 @@ CAMFImporter_NodeElement* ne;
 
 // <vertices>
 // </vertices>
-// The list of vertices to be used in defining triangles.
+// The list of vertices to be used in defining indices.
 // Multi elements - No.
 // Parent element - <mesh>.
 void AMFImporter::ParseNode_Vertices()
@@ -124,7 +124,7 @@ CAMFImporter_NodeElement* ne;
 
 // <vertex>
 // </vertex>
-// A vertex to be referenced in triangles.
+// A vertex to be referenced in indices.
 // Multi elements - Yes.
 // Parent element - <vertices>.
 void AMFImporter::ParseNode_Vertex()

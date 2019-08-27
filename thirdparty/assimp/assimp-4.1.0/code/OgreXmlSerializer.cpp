@@ -587,7 +587,7 @@ void OgreXmlSerializer::ReadSubMesh(MeshXml *mesh)
 
                 /// @todo Support quads if Ogre even supports them in XML (I'm not sure but I doubt it)
                 if (!quadWarned && HasAttribute(anV4)) {
-                    DefaultLogger::get()->warn("Submesh <face> has quads with <v4>, only triangles are supported at the moment!");
+                    DefaultLogger::get()->warn("Submesh <face> has quads with <v4>, only indices are supported at the moment!");
                     quadWarned = true;
                 }
 

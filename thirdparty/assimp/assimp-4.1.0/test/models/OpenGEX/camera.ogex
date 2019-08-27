@@ -57,7 +57,7 @@ CameraNode $node3
 
 GeometryObject $geometry1		// Cube
 {
-	Mesh (primitive = "triangles")
+	Mesh (primitive = "indices")
 	{
 		VertexArray (attrib = "position")
 		{

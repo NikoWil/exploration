@@ -178,7 +178,7 @@ std::string FindPTypes(const aiScene* scene)
 		}
 	}
 	return (haveit[0]?std::string("points"):"")+(haveit[1]?"lines":"")+
-		(haveit[2]?"triangles":"")+(haveit[3]?"n-polygons":"");
+		(haveit[2]?"indices":"")+(haveit[3]?"n-polygons":"");
 }
 
 // -----------------------------------------------------------------------------------

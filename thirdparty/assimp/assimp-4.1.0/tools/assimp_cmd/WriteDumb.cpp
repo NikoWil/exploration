@@ -1146,7 +1146,7 @@ void WriteDump(const aiScene* scene, FILE* out, const char* src, const char* cmd
 			fprintf(out,"\t<Mesh types=\"%s %s %s %s\" material_index=\"%u\">\n",
 				(mesh->mPrimitiveTypes & aiPrimitiveType_POINT    ? "points"    : ""),
 				(mesh->mPrimitiveTypes & aiPrimitiveType_LINE     ? "lines"     : ""),
-				(mesh->mPrimitiveTypes & aiPrimitiveType_TRIANGLE ? "triangles" : ""),
+				(mesh->mPrimitiveTypes & aiPrimitiveType_TRIANGLE ? "indices" : ""),
 				(mesh->mPrimitiveTypes & aiPrimitiveType_POLYGON  ? "polygons"  : ""),
 				mesh->mMaterialIndex);
 

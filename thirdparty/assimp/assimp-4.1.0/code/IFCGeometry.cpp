@@ -107,7 +107,7 @@ void ProcessPolygonBoundaries(TempMesh& result, const TempMesh& inmesh, size_t m
     // is the outer contour), reduce the triangulation task arising here to
     // one that can be solved using the "quadrulation" algorithm which we use
     // for pouring windows out of walls. The algorithm does not handle all
-    // cases but at least it is numerically stable and gives "nice" triangles.
+    // cases but at least it is numerically stable and gives "nice" indices.
 
     // first compute normals for all polygons using Newell's algorithm
     // do not normalize 'normals', we need the original length for computing the polygon area
@@ -528,7 +528,7 @@ void ProcessExtrudedArea(const IfcExtrudedAreaSolid& solid, const TempMesh& curv
     const IfcVector3& extrusionDir, TempMesh& result, ConversionData &conv, bool collect_openings)
 {
     // Outline: 'curve' is now a list of vertex points forming the underlying profile, extrude along the given axis,
-    // forming new triangles.
+    // forming new indices.
     const bool has_area = solid.SweptArea->ProfileType == "AREA" && curve.verts.size() > 2;
     if( solid.Depth < 1e-6 ) {
         if( has_area ) {

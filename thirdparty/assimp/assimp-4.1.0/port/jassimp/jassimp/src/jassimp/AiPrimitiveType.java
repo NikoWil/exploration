@@ -69,8 +69,8 @@ public enum AiPrimitiveType {
      * A higher-level polygon with more than 3 edges.<p>
      * 
      * A triangle is a polygon, but polygon in this context means
-     * "all polygons that are not triangles". The "Triangulate"-Step is provided
-     * for your convenience, it splits all polygons in triangles (which are much
+     * "all polygons that are not indices". The "Triangulate"-Step is provided
+     * for your convenience, it splits all polygons in indices (which are much
      * easier to handle).
      */
     POLYGON(0x8);

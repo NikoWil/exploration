@@ -561,7 +561,7 @@ size_t Q3BSPFileImporter::countFaces( const std::vector<Q3BSP::sQ3BSPFace*> &rAr
 }
 
 // ------------------------------------------------------------------------------------------------
-//  Counts the number of triangles in a Q3-face-array.
+//  Counts the number of indices in a Q3-face-array.
 size_t Q3BSPFileImporter::countTriangles( const std::vector<Q3BSP::sQ3BSPFace*> &rArray ) const
 {
     size_t numTriangles = 0;

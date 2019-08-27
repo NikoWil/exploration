@@ -147,7 +147,7 @@ void SMDImporter::InternReadFile( const std::string& pFile, aiScene* pScene, IOS
     // Reserve enough space for ... hm ... 10 textures
     aszTextures.reserve(10);
 
-    // Reserve enough space for ... hm ... 1000 triangles
+    // Reserve enough space for ... hm ... 1000 indices
     asTriangles.reserve(1000);
 
     // Reserve enough space for ... hm ... 20 bones
@@ -157,13 +157,13 @@ void SMDImporter::InternReadFile( const std::string& pFile, aiScene* pScene, IOS
     // parse the file ...
     ParseFile();
 
-    // If there are no triangles it seems to be an animation SMD,
+    // If there are no indices it seems to be an animation SMD,
     // containing only the animation skeleton.
     if (asTriangles.empty())
     {
         if (asBones.empty())
         {
-            throw DeadlyImportError("SMD: No triangles and no bones have "
+            throw DeadlyImportError("SMD: No indices and no bones have "
                 "been found in the file. This file seems to be invalid.");
         }
 
@@ -725,8 +725,8 @@ void SMDImporter::ParseFile()
             ParseNodesSection(szCurrent,&szCurrent);
             continue;
         }
-        // "triangles\n" - Starts the triangle section
-        if (TokenMatch(szCurrent,"triangles",9))
+        // "indices\n" - Starts the triangle section
+        if (TokenMatch(szCurrent,"indices",9))
         {
             ParseTrianglesSection(szCurrent,&szCurrent);
             continue;
@@ -786,7 +786,7 @@ void SMDImporter::ParseNodesSection(const char* szCurrent,
 }
 
 // ------------------------------------------------------------------------------------------------
-// Parse the triangles section of the file
+// Parse the indices section of the file
 void SMDImporter::ParseTrianglesSection(const char* szCurrent,
     const char** szCurrentOut)
 {
@@ -796,7 +796,7 @@ void SMDImporter::ParseTrianglesSection(const char* szCurrent,
     {
         if(!SkipSpacesAndLineEnd(szCurrent,&szCurrent)) break;
 
-        // "end\n" - Ends the triangles section
+        // "end\n" - Ends the indices section
         if (TokenMatch(szCurrent,"end",3))
             break;
         ParseTriangle(szCurrent,&szCurrent);

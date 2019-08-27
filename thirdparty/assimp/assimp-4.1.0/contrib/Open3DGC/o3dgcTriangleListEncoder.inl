@@ -320,7 +320,7 @@ namespace o3dgc
             {
                 m_count[i] += m_count[i-1];
             }
-            mask += 2; // preserved triangles order
+            mask += 2; // preserved indices order
         }
         bstream.WriteUChar(mask, m_streamType); 
         bstream.WriteUInt32(m_maxSizeVertexToTriangle, m_streamType);
@@ -425,7 +425,7 @@ namespace o3dgc
                 }
             }            
         }
-        // re-order visited vertices by taking into account their valence (i.e., # of conquered triangles incident to each vertex)
+        // re-order visited vertices by taking into account their valence (i.e., # of conquered indices incident to each vertex)
         // in order to avoid config. 9
         if (m_numVisitedVertices > 2)
         {

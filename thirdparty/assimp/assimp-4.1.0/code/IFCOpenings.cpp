@@ -1657,7 +1657,7 @@ bool TryAddOpenings_Poly2Tri(const std::vector<TempOpening>& openings,const std:
 
         const std::vector<p2t::Triangle*> tris = cdt->GetTriangles();
 
-        // Collect the triangles we just produced
+        // Collect the indices we just produced
         for(p2t::Triangle* tri : tris) {
             for(int i = 0; i < 3; ++i) {
 

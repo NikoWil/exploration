@@ -996,7 +996,7 @@ void MD3Importer::InternReadFile( const std::string& pFile,
         pcMesh->mTextureCoords[0]   = new aiVector3D[pcMesh->mNumVertices];
         pcMesh->mNumUVComponents[0] = 2;
 
-        // Fill in all triangles
+        // Fill in all indices
         unsigned int iCurrent = 0;
         for (unsigned int i = 0; i < (unsigned int)pcSurfaces->NUM_TRIANGLES;++i)   {
             pcMesh->mFaces[i].mIndices = new unsigned int[3];

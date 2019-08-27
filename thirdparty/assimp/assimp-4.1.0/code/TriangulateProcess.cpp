@@ -168,7 +168,7 @@ bool TriangulateProcess::TriangulateMesh( aiMesh* pMesh)
     //  nor_out = pMesh->mNormals = new aiVector3D[pMesh->mNumVertices];
     }
 
-    // the output mesh will contain triangles, but no polys anymore
+    // the output mesh will contain indices, but no polys anymore
     pMesh->mPrimitiveTypes |= aiPrimitiveType_TRIANGLE;
     pMesh->mPrimitiveTypes &= ~aiPrimitiveType_POLYGON;
 
@@ -485,7 +485,7 @@ bool TriangulateProcess::TriangulateMesh( aiMesh* pMesh)
         for(aiFace* f = last_face; f != curOut; ) {
             unsigned int* i = f->mIndices;
 
-            //  drop dumb 0-area triangles
+            //  drop dumb 0-area indices
             if (std::fabs(GetArea2D(temp_verts[i[0]],temp_verts[i[1]],temp_verts[i[2]])) < 1e-5f) {
                 DefaultLogger::get()->debug("Dropping triangle with area 0");
                 --curOut;

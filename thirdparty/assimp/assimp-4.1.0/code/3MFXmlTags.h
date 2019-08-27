@@ -52,7 +52,7 @@ namespace XmlTag {
     static const std::string mesh = "mesh";
     static const std::string vertices = "vertices";
     static const std::string vertex = "vertex";
-    static const std::string triangles = "triangles";
+    static const std::string triangles = "indices";
     static const std::string triangle = "triangle";
     static const std::string x = "x";
     static const std::string y = "y";

@@ -464,7 +464,7 @@ void WriteDump(const aiScene* scene, IOStream* io, bool shortened) {
             ioprintf(io,"\t<Mesh types=\"%s %s %s %s\" material_index=\"%i\">\n",
                 (mesh->mPrimitiveTypes & aiPrimitiveType_POINT    ? "points"    : ""),
                 (mesh->mPrimitiveTypes & aiPrimitiveType_LINE     ? "lines"     : ""),
-                (mesh->mPrimitiveTypes & aiPrimitiveType_TRIANGLE ? "triangles" : ""),
+                (mesh->mPrimitiveTypes & aiPrimitiveType_TRIANGLE ? "indices" : ""),
                 (mesh->mPrimitiveTypes & aiPrimitiveType_POLYGON  ? "polygons"  : ""),
                 mesh->mMaterialIndex);
 

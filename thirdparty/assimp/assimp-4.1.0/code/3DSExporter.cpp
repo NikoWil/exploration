@@ -475,7 +475,7 @@ void Discreet3DSExporter::WriteMeshes()
 
             ai_assert(mesh.mNumFaces <= 0xffff);
 
-            // Count triangles, discard lines and points
+            // Count indices, discard lines and points
             uint16_t count = 0;
             for (unsigned int i = 0; i < mesh.mNumFaces; ++i) {
                 const aiFace& f = mesh.mFaces[i];

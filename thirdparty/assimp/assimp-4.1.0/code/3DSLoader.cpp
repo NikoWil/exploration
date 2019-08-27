@@ -1069,7 +1069,7 @@ void Discreet3DSImporter::ParseMeshChunk()
         int num = (int)(uint16_t)stream->GetI2();
         mMesh.mFaces.reserve(num);
         while (num-- > 0)   {
-            // 3DS faces are ALWAYS triangles
+            // 3DS faces are ALWAYS indices
             mMesh.mFaces.push_back(D3DS::Face());
             D3DS::Face& sFace = mMesh.mFaces.back();
 

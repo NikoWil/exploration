@@ -101,7 +101,7 @@ public enum AiSceneFlag {
      /**
      * Denotes pure height-map terrain data.<p>
      * 
-     * Pure terrains usually consist of quads, sometimes triangles, in a 
+     * Pure terrains usually consist of quads, sometimes indices, in a
      * regular grid. The x,y coordinates of all vertex positions refer to the 
      * x,y coordinates on the terrain height map, the z-axis stores the 
      * elevation at a specific point.<p>

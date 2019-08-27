@@ -707,7 +707,7 @@ void OpenGEXImporter::handleMeshNode( ODDLParser::DDLNode *node, aiScene *pScene
                 m_currentMesh->mPrimitiveTypes |= aiPrimitiveType_POINT;
             } else if ( "lines" == propKey ) {
                 m_currentMesh->mPrimitiveTypes |= aiPrimitiveType_LINE;
-            } else if( "triangles" == propKey ) {
+            } else if( "indices" == propKey ) {
                 m_currentMesh->mPrimitiveTypes |= aiPrimitiveType_TRIANGLE;
             } else if ( "quads" == propKey ) {
                 m_currentMesh->mPrimitiveTypes |= aiPrimitiveType_POLYGON;

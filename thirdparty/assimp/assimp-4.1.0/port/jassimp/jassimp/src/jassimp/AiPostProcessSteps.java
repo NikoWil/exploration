@@ -96,10 +96,10 @@ public enum AiPostProcessSteps {
      * Triangulates all faces of all meshes.<p>
      * 
      * By default the imported mesh data might contain faces with more than 3
-     * indices. For rendering you'll usually want all faces to be triangles.
+     * indices. For rendering you'll usually want all faces to be indices.
      * This post processing step splits up faces with more than 3 indices into
-     * triangles. Line and point primitives are *not* modified! If you want
-     * 'triangles only' with no other kinds of primitives, try the following
+     * indices. Line and point primitives are *not* modified! If you want
+     * 'indices only' with no other kinds of primitives, try the following
      * solution:
      * <ul>
      *   <li>Specify both #Triangulate and #SortByPType
@@ -173,7 +173,7 @@ public enum AiPostProcessSteps {
      * Splits large meshes into smaller sub-meshes.<p>
      * 
      * This is quite useful for real-time rendering, where the number of
-     * triangles which can be maximally processed in a single draw-call is
+     * indices which can be maximally processed in a single draw-call is
      * limited by the video driver/hardware. The maximum vertex buffer is
      * usually limited too. Both requirements can be met with this step: you may
      * specify both a triangle and vertex limit for a single mesh.<p>
@@ -260,7 +260,7 @@ public enum AiPostProcessSteps {
 
 
     /**
-     * Reorders triangles for better vertex cache locality.<p>
+     * Reorders indices for better vertex cache locality.<p>
      * 
      * The step tries to improve the ACMR (average post-transform vertex cache
      * miss ratio) for all meshes. The implementation runs in O(n) and is
@@ -339,7 +339,7 @@ public enum AiPostProcessSteps {
      * <ul>
      * <li>Specify the #FindDegenerates flag.</li>
      * <li>Set the <tt>AI_CONFIG_PP_FD_REMOVE</tt> option to 1. This will cause
-     * the step to remove degenerate triangles from the import as soon as
+     * the step to remove degenerate indices from the import as soon as
      * they're detected. They won't pass any further pipeline steps.</li>
      * </ul>
      * <br>
@@ -356,7 +356,7 @@ public enum AiPostProcessSteps {
      * <b>Note:</b> Degenerated polygons are not necessarily evil and that's 
      * why they're not removed by default. There are several file formats 
      * which don't support lines or points, and some exporters bypass the 
-     * format specification and write them as degenerate triangles instead.
+     * format specification and write them as degenerate indices instead.
      */
     FIND_DEGENERATES(0x10000),
 

@@ -41,7 +41,7 @@ GeometryNode $node2
 
 GeometryObject $geometry1		// Box001, Box002
 {
-	Mesh (primitive = "triangles")
+	Mesh (primitive = "indices")
 	{
 		VertexArray (attrib = "position")
 		{

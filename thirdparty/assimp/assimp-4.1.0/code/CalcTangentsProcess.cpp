@@ -121,7 +121,7 @@ bool CalcTangentsProcess::ProcessMesh( aiMesh* pMesh, unsigned int meshIndex)
         return false;
 
     // If the mesh consists of lines and/or points but not of
-    // triangles or higher-order polygons the normal vectors
+    // indices or higher-order polygons the normal vectors
     // are undefined.
     if (!(pMesh->mPrimitiveTypes & (aiPrimitiveType_TRIANGLE | aiPrimitiveType_POLYGON)))
     {

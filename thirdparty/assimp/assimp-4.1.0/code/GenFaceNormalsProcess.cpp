@@ -109,7 +109,7 @@ bool GenFaceNormalsProcess::GenMeshFaceNormals (aiMesh* pMesh)
     }
 
     // If the mesh consists of lines and/or points but not of
-    // triangles or higher-order polygons the normal vectors
+    // indices or higher-order polygons the normal vectors
     // are undefined.
     if (!(pMesh->mPrimitiveTypes & (aiPrimitiveType_TRIANGLE | aiPrimitiveType_POLYGON)))   {
         DefaultLogger::get()->info("Normal vectors are undefined for line and point meshes");

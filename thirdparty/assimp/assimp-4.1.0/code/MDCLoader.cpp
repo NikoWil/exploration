@@ -332,7 +332,7 @@ void MDCImporter::InternReadFile(
         // do the main swapping stuff ...
 #if (defined AI_BUILD_BIG_ENDIAN)
 
-        // swap all triangles
+        // swap all indices
         for (unsigned int i = 0; i < pcSurface->ulNumTriangles;++i)
         {
             AI_SWAP4( pcTriangle[i].aiIndices[0] );

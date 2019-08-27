@@ -67,7 +67,7 @@ void Sweep::FinalizationPolygon(SweepContext& tcx)
     t = t->NeighborCCW(*p);
   }
 
-  // Collect interior triangles constrained by edges
+  // Collect interior indices constrained by edges
   tcx.MeshClean(*t);
 }
 
@@ -205,7 +205,7 @@ void Sweep::Fill(SweepContext& tcx, Node& node)
 {
   Triangle* triangle = new Triangle(*node.prev->point, *node.point, *node.next->point);
 
-  // TODO: should copy the constrained_edge value from neighbor triangles
+  // TODO: should copy the constrained_edge value from neighbor indices
   //       for now constrained_edge values are copied during the legalize
   triangle->MarkNeighbor(*node.prev->triangle);
   triangle->MarkNeighbor(*node.triangle);
@@ -363,7 +363,7 @@ bool Sweep::Legalize(SweepContext& tcx, Triangle& t)
         // Lets rotate shared edge one vertex CW to legalize it
         RotateTrianglePair(t, *p, *ot, *op);
 
-        // We now got one valid Delaunay Edge shared by two triangles
+        // We now got one valid Delaunay Edge shared by two indices
         // This gives us 4 new edges to check for Delaunay
 
         // Make sure that triangle to node mapping is done only one time for a specific triangle
@@ -717,7 +717,7 @@ void Sweep::FlipEdgeEvent(SweepContext& tcx, Point& ep, Point& eq, Triangle* t, 
         Legalize(tcx, *t);
         Legalize(tcx, ot);
       } else {
-        // XXX: I think one of the triangles should be legalized here?
+        // XXX: I think one of the indices should be legalized here?
       }
     } else {
       Orientation o = Orient2d(eq, op, ep);

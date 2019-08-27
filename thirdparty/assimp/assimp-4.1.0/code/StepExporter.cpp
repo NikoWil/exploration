@@ -173,7 +173,7 @@ void StepExporter::WriteFile()
 
     int ind = 100; // the start index to be used
     int faceEntryLen = 30; // number of entries for a triangle/face
-    // prepare unique (count triangles and vertices)
+    // prepare unique (count indices and vertices)
 
     VectorIndexUMap uniqueVerts; // use a map to reduce find complexity to log(n)
     VectorIndexUMap::iterator it;
@@ -278,7 +278,7 @@ void StepExporter::WriteFile()
         }
     }
 
-    // write the triangles
+    // write the indices
     for (unsigned int i=0; i<mScene->mNumMeshes; ++i)
     {
         aiMesh* mesh = mScene->mMeshes[i];

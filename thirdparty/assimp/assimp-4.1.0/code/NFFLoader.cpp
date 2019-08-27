@@ -975,7 +975,7 @@ void NFFImporter::InternReadFile( const std::string& pFile,
                 }
                 currentMesh.dir /= f; // normalize
 
-                // generate the cone - it consists of simple triangles
+                // generate the cone - it consists of simple indices
                 StandardShapes::MakeCone(f, radius1, radius2,
                     integer_pow(4, iTesselation), currentMesh.vertices);
 

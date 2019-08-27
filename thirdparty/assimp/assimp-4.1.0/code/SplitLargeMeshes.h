@@ -72,7 +72,7 @@ class SplitLargeMeshesProcess_Vertex;
 #   define AI_SLM_DEFAULT_MAX_VERTICES      1000000
 #endif
 
-// default limit for triangles
+// default limit for indices
 #if (!defined AI_SLM_DEFAULT_MAX_TRIANGLES)
 #   define AI_SLM_DEFAULT_MAX_TRIANGLES     1000000
 #endif
