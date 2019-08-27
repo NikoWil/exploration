@@ -5,10 +5,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "shader.hpp"
 #include "camera.hpp"
+#include "geometry.h"
 #include "model.hpp"
-#include "plane.hpp"
+#include "shader.hpp"
 
 #include <iostream>
 
@@ -74,20 +74,20 @@ int main()
     glEnable(GL_DEPTH_TEST);
 
     // build and compile shaders
-    // -------------------------
-    Shader ourShader("resources/shaders/model_loading.vs", "resources/shaders/model_loading.fs");
-
-    // load models
-    // -----------
-    Model ourModel("resources/objects/nanosuit/nanosuit.obj");
-
-    Shader plane_shader("resources/shaders/plane.vs", "resources/shaders/plane.fs");
+    Shader plane_shader("resources/shaders/plane.vs.glsl", "resources/shaders/plane.fs.glsl");
 
     // draw in wireframe
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    const Plane plane(4, 4, 10.f, 10.f);
-    const auto plane_mesh = plane.generate_mesh();
+    float v = 4.f;
+    std::vector<glm::vec3> vertices{{-v, v, -v}, {-v, v, v}, {v, v, v}, {v, v, -v}};
+    std::vector<glm::vec3> normals{4, {1., 0., 0.}};
+    std::vector<glm::vec3> color{4, {0.7, 0.6, 0.2}};
+    std::vector<glm::uvec3> indices{{0, 1, 2}, {0, 2, 3}};
+    const SimpleMesh plane_mesh{vertices, normals, color, indices};
+
+    const auto rand_plane = geom::generate_plane(20, 20, 100, 100)
+        .generate_mesh(glm::vec3(0.7, 0.6, 0.2));
 
     // render loop
     // -----------
@@ -95,7 +95,7 @@ int main()
     {
         // per-frame time logic
         // --------------------
-        float currentFrame = static_cast<float>(glfwGetTime());
+        auto currentFrame = static_cast<float>(glfwGetTime());
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
@@ -108,23 +108,21 @@ int main()
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // don't forget to enable shader before setting uniforms
-        ourShader.use();
-
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        glm::mat4 view = camera.GetViewMatrix();
-        ourShader.setMat4("projection", projection);
-        ourShader.setMat4("view", view);
+        glm::mat4 view = camera.getViewMatrix();
 
-        // render the loaded model
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
-        ourShader.setMat4("model", model);
-        ourModel.draw(ourShader);
+        plane_shader.use();
+        // set uniforms
+        glm::mat4 plane_model = glm::mat4(1.0f);
+        plane_model = glm::translate(plane_model, glm::vec3(0.0f, -1.f, 0.0f));
+        glm::mat4 plane_view = view;
+        glm::mat4 plane_projection = projection;
 
-        plane_mesh.draw(plane_shader, model, view, projection);
+        plane_shader.setVec3("lightDir", glm::vec3(-1., -1., 0.));
+        plane_shader.setVec3("viewPos", camera.Position);
+
+        rand_plane.draw(plane_shader, plane_model, plane_view, plane_projection);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
