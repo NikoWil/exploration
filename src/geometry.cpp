@@ -58,3 +58,36 @@ TriangleSoup geom::generate_plane(unsigned x_count_quad, unsigned z_count_quad, 
 
   return TriangleSoup{points, indices};
 }
+
+TriangleSoup geom::generate_box(float width, float height, float depth) {
+  assert((width / 2) > 0.f);
+  assert((height / 2) > 0.f);
+  assert((depth / 2) > 0.f);
+
+  auto w_offset{width / 2.f};
+  auto h_offset{height / 2.f};
+  auto d_offset{depth / 2.f};
+
+  std::vector<glm::vec3> vertices{
+      {-w_offset,  h_offset, -d_offset}, {-w_offset,  h_offset,  d_offset},
+      { w_offset,  h_offset,  d_offset}, { w_offset,  h_offset, -d_offset},
+      {-w_offset, -h_offset, -d_offset}, {-w_offset, -h_offset,  d_offset},
+      { w_offset, -h_offset,  d_offset}, { w_offset, -h_offset, -d_offset}
+  };
+
+  std::vector<glm::uvec3> indices{
+      {0, 1, 2}, {0, 2, 3}, // top
+      {0, 4, 5}, {0, 5, 1},
+      {1, 5, 6}, {1, 6, 2},
+      {2, 6, 7}, {2, 7, 3},
+      {3, 7, 4}, {3, 4, 0},
+      {4, 6, 5}, {4, 7, 6}
+  };
+
+  return TriangleSoup{vertices, indices};
+}
+
+TriangleSoup geom::generate_cube(float width) {
+  assert((width / 2) > 0.f);
+  return generate_box(width, width, width);
+}

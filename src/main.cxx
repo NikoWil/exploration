@@ -78,6 +78,7 @@ int main()
 
     // draw in wireframe
     // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glEnable(GL_CULL_FACE);
 
     float v = 4.f;
     std::vector<glm::vec3> vertices{{-v, v, -v}, {-v, v, v}, {v, v, v}, {v, v, -v}};
@@ -87,24 +88,25 @@ int main()
     const SimpleMesh plane_mesh{vertices, normals, color, indices};
 
     const auto rand_plane = geom::generate_plane(20, 20, 100, 100)
-        .generate_mesh(glm::vec3(0.7, 0.6, 0.2));
+        .generate_mesh(glm::vec3{0.7, 0.6, 0.2});
+    const auto box = geom::generate_box(2.f, 1.5f, 3.5f)
+        .generate_mesh(glm::vec3{1.f, 0.f, 1.f});
+    const auto cube = geom::generate_cube(2.5f)
+        .generate_mesh(glm::vec3{0.f, 0.7f, 0.6f});
 
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
     {
         // per-frame time logic
-        // --------------------
         auto currentFrame = static_cast<float>(glfwGetTime());
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         // input
-        // -----
         processInput(window);
 
         // render
-        // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -114,18 +116,24 @@ int main()
 
         plane_shader.use();
         // set uniforms
-        glm::mat4 plane_model = glm::mat4(1.0f);
-        plane_model = glm::translate(plane_model, glm::vec3(0.0f, -1.f, 0.0f));
-        glm::mat4 plane_view = view;
-        glm::mat4 plane_projection = projection;
-
-        plane_shader.setVec3("lightDir", glm::vec3(-1., -1., 0.));
+        plane_shader.setVec3("lightDir", glm::vec3{-0.5f, -2.f, -1.f});
         plane_shader.setVec3("viewPos", camera.Position);
 
-        rand_plane.draw(plane_shader, plane_model, plane_view, plane_projection);
+        glm::mat4 plane_model = glm::mat4{1.0f};
+        plane_model = glm::translate(plane_model, glm::vec3(0.0f, -10.f, 0.0f));
+
+        rand_plane.draw(plane_shader, plane_model, view, projection);
+
+        glm::mat4 box_model = glm::mat4{1.f};
+        box_model = glm::translate(box_model, glm::vec3{0.f, -2.f, -4.f});
+        box.draw(plane_shader, box_model, view, projection);
+
+        glm::mat4 cube_model = glm::mat4{1.f};
+        cube_model = glm::translate(cube_model, glm::vec3{10.f, -1.f, 0.f});
+        cube_model = glm::rotate(cube_model, currentFrame, glm::vec3{1.f, 1.f, 0.f});
+        cube.draw(plane_shader, cube_model, view, projection);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
