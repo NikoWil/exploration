@@ -80,22 +80,18 @@ int main()
     // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_CULL_FACE);
 
-    float v = 4.f;
-    std::vector<glm::vec3> vertices{{-v, v, -v}, {-v, v, v}, {v, v, v}, {v, v, -v}};
-    std::vector<glm::vec3> normals{4, {1., 0., 0.}};
-    std::vector<glm::vec3> color{4, {0.7, 0.6, 0.2}};
-    std::vector<glm::uvec3> indices{{0, 1, 2}, {0, 2, 3}};
-    const SimpleMesh plane_mesh{vertices, normals, color, indices};
-
     const auto rand_plane = geom::generate_plane(20, 20, 100, 100)
         .generate_mesh(glm::vec3{0.7, 0.6, 0.2});
     const auto box = geom::generate_box(2.f, 1.5f, 3.5f)
         .generate_mesh(glm::vec3{1.f, 0.f, 1.f});
     const auto cube = geom::generate_cube(2.5f)
         .generate_mesh(glm::vec3{0.f, 0.7f, 0.6f});
+    const auto sphere = geom::generate_cube(2.5f).subdivide(1)
+        ->subdivide(1)->subdivide(1)->subdivide(1)->subdivide(1)
+        ->transform_vertices([](const glm::vec3& v) { return glm::normalize(v); })
+        ->generate_mesh(glm::vec3{0.7f, 0.6f, 0.15f});
 
     // render loop
-    // -----------
     while (!glfwWindowShouldClose(window))
     {
         // per-frame time logic
@@ -119,19 +115,22 @@ int main()
         plane_shader.setVec3("lightDir", glm::vec3{-0.5f, -2.f, -1.f});
         plane_shader.setVec3("viewPos", camera.Position);
 
-        glm::mat4 plane_model = glm::mat4{1.0f};
+        glm::mat4 plane_model{1.0f};
         plane_model = glm::translate(plane_model, glm::vec3(0.0f, -10.f, 0.0f));
-
         rand_plane.draw(plane_shader, plane_model, view, projection);
 
-        glm::mat4 box_model = glm::mat4{1.f};
+        glm::mat4 box_model{1.f};
         box_model = glm::translate(box_model, glm::vec3{0.f, -2.f, -4.f});
         box.draw(plane_shader, box_model, view, projection);
 
-        glm::mat4 cube_model = glm::mat4{1.f};
+        glm::mat4 cube_model{1.f};
         cube_model = glm::translate(cube_model, glm::vec3{10.f, -1.f, 0.f});
         cube_model = glm::rotate(cube_model, currentFrame, glm::vec3{1.f, 1.f, 0.f});
         cube.draw(plane_shader, cube_model, view, projection);
+
+        glm::mat4 sphere_model{1.f};
+        sphere_model = glm::translate(sphere_model, glm::vec3{-10.f, -1.f, 0.f});
+        sphere.draw(plane_shader, sphere_model, view, projection);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
