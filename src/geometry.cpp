@@ -3,6 +3,7 @@
 //
 #include <vector>
 #include <glm/glm.hpp>
+#include <ctime>
 
 #include "geometry.h"
 #include "triangleSoup.h"
@@ -11,7 +12,7 @@ TriangleSoup geom::generate_plane(unsigned x_count_quad, unsigned z_count_quad, 
   assert(x_count_quad >= 2);
   assert(z_count_quad >= 2);
 
-  std::srand(time(nullptr));
+  std::srand(static_cast<unsigned>(std::time(nullptr)));
 
   unsigned x_count_vertex = x_count_quad + 1;
   unsigned z_count_vertex = z_count_quad + 1;

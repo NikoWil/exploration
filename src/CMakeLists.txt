@@ -18,7 +18,7 @@ set_target_properties(prog
 
 IF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     MESSAGE("MSCV detected")
-    TARGET_COMPILE_OPTIONS(prog PRIVATE /W4 /WX)
+    TARGET_COMPILE_OPTIONS(prog PRIVATE /W3 /WX)
 ELSEIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     MESSAGE("GCC detected")
     TARGET_COMPILE_OPTIONS(prog PRIVATE -Wall -Werror) # -pedantic -Wextra

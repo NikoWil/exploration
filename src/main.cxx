@@ -77,7 +77,7 @@ int main()
     Shader plane_shader("resources/shaders/plane.vs.glsl", "resources/shaders/plane.fs.glsl");
 
     // draw in wireframe
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_CULL_FACE);
 
     const auto rand_plane = geom::generate_plane(20, 20, 100, 100)
